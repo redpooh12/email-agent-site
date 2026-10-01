@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>email-agent 개인정보처리방침</title>
+<style>
+  :root { --fg: #1d232b; --muted: #5b6573; --line: #d8dde3; --accent: #2f4fa3; --bg: #fbfbfa; }
+  @media (prefers-color-scheme: dark) { :root { --fg: #e6e9ed; --muted: #9aa4b1; --line: #2c333c; --accent: #8ea8f0; --bg: #14181d; } }
+  body { margin: 0; background: var(--bg); color: var(--fg); font-family: "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif; line-height: 1.7; }
+  main { max-width: 680px; margin: 0 auto; padding: 56px 20px 72px; }
+  h1 { font-size: 26px; margin: 0 0 6px; }
+  h2 { font-size: 18px; margin: 30px 0 8px; }
+  p, li { font-size: 15.5px; }
+  .muted { color: var(--muted); }
+  a { color: var(--accent); }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>개인정보처리방침</h1>
+  <p class="muted">email-agent · 시행일 2026-10-01</p>
+
+  <p>email-agent는 사용자 본인이 자기 사업자 메일함을 감시하려고 직접 만들어 쓰는 개인용 도구입니다. 사용자는 이 도구를 만든 사람 한 명뿐이고, 다른 사람의 데이터는 다루지 않습니다.</p>
+
+  <h2>1. 접근하는 데이터</h2>
+  <ul>
+    <li>사용자 본인이 로그인해 허용한 Gmail 계정의 메일 (제목, 보낸 사람, 받은 시각, 본문). 권한은 읽기 전용(gmail.readonly)입니다.</li>
+    <li>메일을 지우거나, 보내거나, 바꾸지 않습니다.</li>
+  </ul>
+
+  <h2>2. 쓰는 목적</h2>
+  <ul>
+    <li>지식재산권 침해 신고, 오픈마켓 제재 · 공지, 구매자 문의 메일을 분류하는 데에만 씁니다.</li>
+    <li>광고, 판매, 프로파일링, AI 모델 학습에 쓰지 않습니다.</li>
+  </ul>
+
+  <h2>3. 저장 위치</h2>
+  <ul>
+    <li>분류 결과와 처리 기록은 사용자 본인의 PC에만 저장합니다.</li>
+    <li>Gmail 로그인 정보(refresh token)는 PC의 Windows 자격 증명 관리자에 저장합니다.</li>
+  </ul>
+
+  <h2>4. 외부로 보내는 경우</h2>
+  <p>분류와 알림을 위해 아래 서비스에 필요한 만큼만 보냅니다. 모두 사용자 본인의 계정입니다.</p>
+  <ul>
+    <li><b>Anthropic Claude API</b>: 메일을 분류하고 필요한 항목(브랜드, 기한 등)을 뽑기 위해 메일 내용을 보냅니다.</li>
+    <li><b>LangSmith</b>: 품질 점검을 위한 실행 기록을 보냅니다. 이메일 주소와 전화번호는 가린 뒤 보냅니다.</li>
+    <li><b>Telegram</b>: 사용자 본인에게 알림 요약을 보냅니다. 메일 전문은 보내지 않습니다.</li>
+  </ul>
+  <p>이 밖의 제3자에게 데이터를 제공하거나 판매하지 않습니다.</p>
+
+  <h2>5. Google API 데이터 사용</h2>
+  <p>email-agent가 Google API에서 받은 정보의 사용과 다른 앱으로의 전송은 Limited Use 요구사항을 포함한 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>를 따릅니다.</p>
+
+  <h2>6. 삭제</h2>
+  <ul>
+    <li>PC에서 <code>email-agent account remove &lt;계정&gt;</code>를 실행하면 해당 계정의 로그인 정보를 지웁니다.</li>
+    <li><a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>에서 언제든 접근 권한을 해제할 수 있습니다.</li>
+  </ul>
+
+  <hr>
+
+  <h1>Privacy Policy</h1>
+  <p class="muted">email-agent · effective 2026-10-01</p>
+  <p>email-agent is a personal tool used only by its developer to monitor the developer's own business mailboxes. It does not handle anyone else's data.</p>
+  <ul>
+    <li><b>Data accessed:</b> mail (subject, sender, date, body) in Gmail accounts the owner signs in with, read-only (gmail.readonly). It never deletes, sends or modifies mail.</li>
+    <li><b>Use:</b> only to classify IP-infringement notices, marketplace sanctions and notices, and buyer inquiries. Not used for advertising, sale, profiling, or training AI models.</li>
+    <li><b>Storage:</b> results stay on the owner's PC; the Gmail refresh token is kept in Windows Credential Manager.</li>
+    <li><b>Sharing:</b> mail content is sent to the Anthropic Claude API for classification, run traces with email addresses and phone numbers masked go to LangSmith, and short summaries go to the owner's own Telegram. All are the owner's own accounts. No other third parties.</li>
+    <li><b>Google API data:</b> email-agent's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</li>
+    <li><b>Deletion:</b> run <code>email-agent account remove &lt;account&gt;</code> on the PC, or revoke access at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
+  </ul>
+
+  <p><a href="index.html">← email-agent</a></p>
+</main>
+</body>
+</html>
